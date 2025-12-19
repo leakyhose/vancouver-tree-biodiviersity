@@ -25,4 +25,5 @@ shapely==2.1.2
 six==1.17.0
 tzdata==2025.3
 urllib3==2.6.2
+utm==0.8.1
 xyzservices==2025.11.0
