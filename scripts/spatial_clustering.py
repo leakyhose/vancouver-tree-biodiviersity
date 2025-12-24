@@ -21,4 +21,21 @@ labels = clusterer.fit(coords).labels_
 
 gdf['cluster'] = labels
 
-print(pd.Series(labels).value_counts().sort_index())
+# Simple visualization, delete later
+mask = gdf['cluster'] != -1
+filtered = gdf[mask]
+
+plt.scatter(
+    filtered.geometry.x,
+    filtered.geometry.y,
+    c=filtered['cluster'],
+    cmap='tab20',
+    s=10,
+    alpha=0.6
+)
+
+plt.show()
+
+
+# For each cluster, calculate effective species count
+
